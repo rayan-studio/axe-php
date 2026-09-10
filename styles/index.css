@@ -1,26 +1,17 @@
-/*
- * Copyright (c) Axe. All rights reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "GeistSans", "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
 }
 
 body {
     height: 100vh;
     width: 100%;
     background-color: hsl(220, 9%, 7%);
-
     font-weight: 400;
     font-size: 13px;
     color: #fff;
-}
-
-p {
-    font-family: "GeistSans", "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
 }
 
 ::selection {

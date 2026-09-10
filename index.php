@@ -1,13 +1,6 @@
 <?php
-
-try
-{
-    $bdd = new PDO('mysql:host=localhost;dbname=axe', 'root', '');
-}
-catch (Exception $e)
-{
-    die('Erreur : ' . $e->getMessage());
-}
+// login.php (ou index.php)
+require 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
