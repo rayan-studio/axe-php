@@ -1,0 +1,13 @@
+{
+  "name": "axe-php",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start --proxy \"localhost:8080\" --port 80 --files \"**/*.php, **/*.css, **/*.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
