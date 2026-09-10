@@ -6,14 +6,16 @@ $old = $old ?? ['name' => '', 'email' => '']; ?>
 <head>
     <meta charset="utf-8">
     <title>Inscription</title>
-    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="/axe-php/styles/index.css" />
+    <link rel="icon" href="/axe-php/ressources/favicon.ico" />
+
 </head>
 
 <body>
     <div class="box">
         <div class="box-2">
              <div class="header">
-                <img src="./ressources/favicon.ico" width="64" height="64"/>
+                <img src="/axe-php/ressources/favicon.ico" width="64" height="64"/>
                 <div>
                     <h1>Inscription</h1>
                     <span>Veuilliz saisir les informations corespodante. </span>
@@ -22,7 +24,7 @@ $old = $old ?? ['name' => '', 'email' => '']; ?>
             <?php if ($error): ?>
                 <p class="error"><?= htmlspecialchars($error) ?></p>
             <?php endif; ?>
-            <form method="POST" action="register.php">
+            <form method="POST" action="/axe-php/register">
                 <label>Nom
                     <input type="text" name="name" required value="<?= htmlspecialchars($old['name']) ?>">
                 </label>
@@ -37,7 +39,7 @@ $old = $old ?? ['name' => '', 'email' => '']; ?>
                 </label>
                 <button type="submit">S'inscrire</button>
             </form>
-            <p class="link">Déjà un compte ? <a href="login.php">Se connecter</a></p>
+            <p class="link">Déjà un compte ? <a href="/axe-php/login">Se connecter</a></p>
         </div>
     </div>
 </body>

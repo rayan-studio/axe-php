@@ -1,0 +1,16 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Racine
+RewriteRule ^$ public/index.php [L]
+
+# Routes
+RewriteRule ^login/?$ public/index.php?action=login [L,QSA]
+RewriteRule ^register/?$ public/index.php?action=register [L,QSA]
+RewriteRule ^logout/?$ public/index.php?action=logout [L,QSA]
+RewriteRule ^dashboard/?$ public/index.php?action=dashboard [L,QSA]
+
+# Fichiers existants (CSS, images, etc.)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]

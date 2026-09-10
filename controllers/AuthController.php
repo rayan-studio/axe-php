@@ -33,19 +33,19 @@ class AuthController
             $role = $this->userModel->getRole($user['idRole']);
             $_SESSION['role_name'] = $role['nom'] ?? null;
 
-            header('Location: dashboard.php');
+            header('Location: /axe-php/dashboard');
             exit;
         }
 
         $error = 'Identifiants invalides.';
-        include $this->viewPath . 'login.php';
+        include $this->viewPath . '/axe-php/login';
     }
 
     public function register(): void
     {
         // Si c'est un simple GET (affichage du formulaire), on ne fait rien
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            include $this->viewPath . 'register.php';
+            include $this->viewPath . 'register';
             return;
         }
 
@@ -60,20 +60,20 @@ class AuthController
         // Validation
         if (strlen($password) < 8) {
             $error = 'Le mot de passe doit faire au moins 8 caractères.';
-            include $this->viewPath . 'register.php';
+            include $this->viewPath . 'register';
             return;
         }
 
         if ($password !== $passwordConfirm) {
             $error = 'Les mots de passe ne correspondent pas.';
-            include $this->viewPath . 'register.php';
+            include $this->viewPath . 'register';
             return;
         }
 
         // Vérifier que l'email n'existe pas déjà
         if ($this->userModel->findByEmail($email)) {
             $error = 'Cet email est déjà utilisé.';
-            include $this->viewPath . 'register.php';
+            include $this->viewPath . 'register';
             return;
         }
 
@@ -92,14 +92,14 @@ class AuthController
         $role = $this->userModel->getRole($user['role_id']);
         $_SESSION['role_name'] = $role['name'] ?? null;
 
-        header('Location: dashboard.php');
+        header('Location: /axe-php/dashboard');
         exit;
     }
 
     public function logout(): void
     {
         session_destroy();
-        header('Location: login.php');
+        header('Location: /axe-php/login');
         exit;
     }
 }
