@@ -18,21 +18,29 @@ $error = $error ?? '';
 
 <body>
     <div class="box">
-        <h1>Connexion</h1>
-        <?php if ($error): ?>
-            <p class="error"><?= htmlspecialchars($error) ?></p>
-        <?php endif; ?>
-        <form method="POST" action="login.php">
-            <label>Email
-                <input type="email" name="email" required autofocus>
-            </label>
-            <label>Mot de passe
-                <input type="password" name="password" required>
-            </label>
-            <button type="submit">Se connecter</button>
+        <div class="box-2">
+            <div class="header">
+                <img src="./ressources/favicon.ico" width="64" height="64"/>
+                <div>
+                    <h1>Connexion</h1>
+                    <span>Entree vos identifiant.</span>
+                </div>
+            </div>
+            <?php if ($error): ?>
+                <p class="error"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
+            <form method="POST" action="login.php">
+                <label>Email
+                    <input type="email" name="email" required autofocus>
+                </label>
+                <label>Mot de passe
+                    <input type="password" name="password" required>
+                </label>
+                <button type="submit">Se connecter</button>
 
-            <p class="link">Pas de compte ? <a href="register.php">S'inscrire</a></p>   
-        </form>
+                <p class="link">Pas de compte ? <a href="register.php">S'inscrire</a></p>
+            </form>
+        </div>
     </div>
 </body>
 

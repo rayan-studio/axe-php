@@ -1,3 +1,6 @@
+@import url('login.css');
+@import url('input.css');
+
 * {
     padding: 0;
     margin: 0;
@@ -5,15 +8,20 @@
     font-family: "GeistSans", "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
 }
 
+:root {
+    --background: hsl(220, 9%, 7%);
+    --selection: rgba(129, 173, 250, 0.25);
+}
+
 body {
     height: 100vh;
     width: 100%;
-    background-color: hsl(220, 9%, 7%);
+    background-color: var(--background);
     font-weight: 400;
     font-size: 13px;
     color: #fff;
 }
 
 ::selection {
-    background-color: rgba(129, 173, 250, 0.25);
+    background-color: var(--selection);
 }

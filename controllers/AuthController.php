@@ -12,25 +12,44 @@ class AuthController
 
     public function login(): void
     {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            include $this->viewPath . 'login.php';
+            return;
+        }
+
+        $error = '';
         $email    = $_POST['email'] ?? '';
         $password = $_POST['password'] ?? '';
 
         $user = $this->userModel->findByEmail($email);
 
         if ($user && $this->userModel->verifyPassword($password, $user['password'])) {
-            session_regenerate_id(true); // obligatoire
-            $_SESSION['user_id'] = $user['id'];
+            session_regenerate_id(true);
+
+            $_SESSION['user_id']  = $user['id'];
+            $_SESSION['username'] = $user['name'];
+            $_SESSION['role_id']  = $user['idRole'];
+
+            $role = $this->userModel->getRole($user['idRole']);
+            $_SESSION['role_name'] = $role['nom'] ?? null;
+
             header('Location: dashboard.php');
             exit;
-        } else {
-            // Message générique (ne jamais dire "email introuvable" vs "mot de passe incorrect")
-            $error = 'Identifiants invalides.';
-            include $this->viewPath . 'login.php';
         }
+
+        $error = 'Identifiants invalides.';
+        include $this->viewPath . 'login.php';
     }
 
     public function register(): void
     {
+        // Si c'est un simple GET (affichage du formulaire), on ne fait rien
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            include $this->viewPath . 'register.php';
+            return;
+        }
+
+        $error = '';
         $name            = trim($_POST['name'] ?? '');
         $email           = trim($_POST['email'] ?? '');
         $password        = $_POST['password'] ?? '';
@@ -64,8 +83,14 @@ class AuthController
         // Connexion immédiate
         $user = $this->userModel->findByEmail($email);
         session_regenerate_id(true);
-        $_SESSION['user_id']  = $user['id'];
-        $_SESSION['username'] = $name;
+
+        // id utilisateur
+        $_SESSION['user_id']   = $user['id'];
+        $_SESSION['username']  = $user['name'];
+        $_SESSION['role_id']   = $user['role_id'];
+
+        $role = $this->userModel->getRole($user['role_id']);
+        $_SESSION['role_name'] = $role['name'] ?? null;
 
         header('Location: dashboard.php');
         exit;

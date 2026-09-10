@@ -3,3 +3,120 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  */
 
+.box {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+}
+
+.box-2 {
+    width: 100%;
+    max-width: 380px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.header img {
+    width: 48px;
+    height: 48px;
+}
+
+.header h1 {
+    margin: 0 0 3px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.header span {
+    color: hsl(220, 5%, 45%);
+    font-size: 13px;
+}
+
+/* FORM */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+button {
+    height: 40px;
+    width: 100%;
+    margin-top: 6px;
+
+    background-color: hsl(217, 92%, 65%);
+    border: none;
+    border-radius: 7px;
+
+    color: hsl(240, 100%, 100%);
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 150ms ease;
+}
+
+button:hover {
+    background-color: hsl(217, 92%, 72%);
+}
+
+button:focus-visible {
+    outline: 2px solid hsl(217, 92%, 65%);
+    outline-offset: 2px;
+}
+
+/* ERROR */
+
+.error {
+    margin: 0 0 20px;
+    padding: 10px 14px;
+
+    background: hsl(0, 55%, 14%);
+    border: 1px solid hsl(0, 55%, 24%);
+    border-radius: 7px;
+
+    color: hsl(0, 80%, 78%);
+    font-size: 13px;
+}
+
+/* LINK */
+.link {
+    margin-top: 4px;
+    text-align: center;
+    font-size: 13px;
+    color: hsl(220, 5%, 45%);
+}
+
+.link a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
