@@ -13,8 +13,16 @@ body {
     height: 100vh;
     width: 100%;
     background-color: hsl(220, 9%, 7%);
+
+    font-weight: 400;
+    font-size: 13px;
+    color: #fff;
 }
 
 p {
     font-family: "GeistSans", "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+::selection {
+    background-color: rgba(129, 173, 250, 0.25);
 }
