@@ -1,5 +1,6 @@
 @import url('login.css');
 @import url('input.css');
+@import url('dashboard.css');
 
 * {
     padding: 0;

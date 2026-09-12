@@ -45,7 +45,7 @@ class AuthController
     {
         // Si c'est un simple GET (affichage du formulaire), on ne fait rien
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            include $this->viewPath . 'register';
+            include $this->viewPath . 'register.php';
             return;
         }
 

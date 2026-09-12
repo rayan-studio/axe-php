@@ -8,3 +8,18 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./License.txt)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)]()
+
+# Dépendances
+
+Pour ce projet voici la liste des modules nécessaires :
+
+* [Wampserver](https://wampserver.aviatechno.net/)
+* [nodejs](https://nodejs.org/fr)
+
+# Démarrer le projet
+
+Pour démarrer le projet on n'utilise npm
+
+```js
+npm run dev
+```

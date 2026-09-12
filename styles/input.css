@@ -34,3 +34,16 @@ input:focus {
     border-color: hsl(217, 92%, 65%);
     box-shadow: 0 0 0 3px rgba(129, 173, 250, 0.15);
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px hsl(220, 9%, 9%) inset;
+    box-shadow: 0 0 0 1000px hsl(220, 9%, 9%) inset;
+    -webkit-text-fill-color: #fff;
+    caret-color: #8ab4f8;
+    font-family: "GeistSans", "GeistSans Fallback", ui-sans-serif, system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    transition: background-color 5000s ease-in-out 0s;
+}
